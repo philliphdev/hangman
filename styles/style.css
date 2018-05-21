@@ -18,7 +18,7 @@
     font-size: 80px;
     margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: wrap;
     /* padding: 2em; */
     letter-spacing: 10px;
     color: red;
