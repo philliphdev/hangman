@@ -1,20 +1,50 @@
-.wordLetters {
+.container {
     display: flex;
-    padding: 2em;
+    margin: 0 auto;
+    border: 10px solid gray;
+    padding: 10px;
+    justify-content: space-around;
+}
+
+.wordLetters {
+    font-size: 80px;
+    display: flex;
+    /* padding: 5em; */
     letter-spacing: 10px;
     color: red;
 }
 
 .alphabet {
+    font-size: 80px;
+    margin: 0 auto;
     display: flex;
-    padding: 2em;
+    justify-content: center;
+    /* padding: 2em; */
     letter-spacing: 10px;
     color: red;
 }
 
 .hangman {
     border: 10px solid red;
+    padding: 5em;
+    margin: 0 auto;
 }
+.instructions {
+    border: 10px solid red;
+    padding: 5em;
+    margin: 0 auto;
+}
+.clues {
+    font-size: 2em;
+    border: 10px solid red;
+    padding: 2em;
+    margin: 0 auto;
+}
+
+/* h2{
+    margin: 0 auto;
+    font-size: 2em;
+} */
 
 #hangmanHead {
     border: 10px solid blue;
