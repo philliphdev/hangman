@@ -1,0 +1,28 @@
+As a user I want to:
+  - play a game of hangman
+  - so that I can have some fun
+  
+  - have a clue to the word I am guessing to spell
+  - so that the game/word has a theme
+  
+  - see how many characters the word has
+  - so that I can select the letters
+  
+  - see which letters I have already chosen
+  - so that I don't guess the same letter twice
+  
+  - see where each correctly chosen letter fits within the word
+  - so that I can determine which letter to choose next
+  
+  - see my score
+  - so I know how I am doing
+  
+  - have hints to help me along the way
+  - so that I have a better chance of winning
+  
+  - know when I win
+  - so I can celebrate victory
+  
+  - choose the difiiculty level
+  - so that I can be challenged
+  
