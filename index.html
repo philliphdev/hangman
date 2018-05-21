@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,78 @@
     <title>Hangman</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
- 
+    <div class="container">
+        <div class="instructions">
+            <h1>Hangman</h1>
+            <ul>
+                <li>Guess the letters in the word by selecting a letter from the alphabet</li>
+                <li>For every incorrect letter chosen a body part is added to the gallow</li>
+                <li>8 incorrect choices hangs the man and you lose</li>
+                <li>Choose wisely</li>
+                <li>Click Play to begin</li>
+            </ul>
+        </div>
+        <div class="hangman">
+            <!-- This is where to build the hangman and gallow -->
+            <div class="gallow">
+                <div id="hangmanHead"></div>
+                <div id="hangmanBody"></div>
+                <div id="leftArm"></div>
+                <div id="rightArm"></div>
+                <div id="leftLeg"></div>
+                <div id="rightLeg"></div>
+                <div id="hanger"></div>
+                <div id="rope"></div>
+            </div>
+            <div class="wordLetters">
+                <p>L</p>
+                <p>E</p>
+                <p>T</p>
+                <p>T</p>
+                <p>E</p>
+                <p>R</p>
+                <p>S</p>
+            </div>
+        </div>
+        <div class="clues">
+            <h2>Guess the word:</h2>
+            <p id="wordSubject"></p>
+        </div>
+        <button>PLAY HANGMAN</button>
+        <div class="alphabet">
+            <p>A</p>
+            <p>B</p>
+            <p>C</p>
+            <p>D</p>
+            <p>E</p>    
+            <p>F</p>
+            <p>G</p>
+            <p>H</p>
+            <p>I</p>
+            <p>J</p>
+            <p>K</p>
+            <p>L</p>
+            <p>M</p>
+            <p>N</p>
+            <p>O</p>
+            <p>P</p>
+            <p>Q</p>
+            <p>R</p>
+            <p>S</p>
+            <p>T</p>
+            <p>U</p>
+            <p>V</p>
+            <p>W</p>
+            <p>X</p>
+            <p>Y</p>
+            <p>Z</p>
+        </div>
+
+    </div>
+
     <script src="js/script"></script>
 </body>
+
 </html>
