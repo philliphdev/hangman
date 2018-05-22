@@ -1,116 +1,52 @@
-// Game board functions
-// $(document).ready(function () {
-//     console.log('WE ARE BORG')
-    const Hangman = {
-        // build out the game board 
+
+const Hangman = {
+    getWordInPlay: function () {
+        const randomWord = ['PICKARD', 'KIRK', 'CRUNCH', 'MORGAN', 'SPARROW']
+        let largeNumber = Math.random()
+        let randomNumber = Math.floor(largeNumber * randomWord.length)
+        console.log("line 7 " + randomNumber)
+        const wordInPlay = randomWord[randomNumber]
+        console.log(wordInPlay)
+        this.alphabet()
+            // put underscores for letters in wordInPlay
+        let letters = $('.wordLetters')
+        letters.html = ('')        
+        for (i = 0; i < wordInPlay.length; i++) {
+            let letterClass = "id = letter" + i
+            letters.append(`
+                <p ${letterClass}>_</p>
+                `)
+        }
 
         
-        randomWords: function () {
-            // get a random word and populate the correct word
-            const randomWord = [{
-                word: "MURRAY",
-                subject: "Last name of an actor in the movie Ground Hog",
-                hint: "Rhymes with hurry "
-            },
-            {
-                word: "SOLO",
-                subject: "Captain of the millennial falcon",
-                hint: "His best friend is a wookie"
-            },
-            {
-                word: "YODA",
-                subject: "Smallest of the Jedi Masters",
-                hint: "Might be right are you"
-            },
-            {
-                word: "EASTWOOD",
-                subject: "The Good Bad and Ugly",
-                hint: "Paint the whole town red"
-            },
-            {
-                word: "MERKEL",
-                subject: "American Princess",
-                hint: "She is on the hit TV series Suits"
-            },
+        return wordInPlay
+    }, // end of GetWordInPlay
 
-            ]
+    // put selectable letters/alphabet on screen
 
-        },
-
-        getWordInPlay: function () {
-            // const WordInPlay = 'MURRAY'
-        console.log("Word " + WordInPlay)
-        },
-
-
-        // put the number of letters in correct word on the page in order
-    //    const PlayGame = {
-        correctLetters: function (word, letterChosen) {
-            console.log(word, letterChosen)
-            let letters = $('.wordLetters')
-            letters.html = ('')
-            if (letterChosen === '') {
-                letters.html = ('')
-                this.alphabet()
-                for (i = 0; i < word.length; i++) {
-                    let letterClass = "id = letter" + i
-                    letters.append(`
-                    <p ${letterClass}>_</p>
-                    `)
-                }
-            } else {
-                for (i = 0; i < word.length; i++) {
-                    if (letterChosen === word[i]) {
-                        let test = "#letter" + i
-                        $(test).html(`
-                        ${word[i]}`)
-                        console.log("hmmm " + test)
-                    }
-                }
-            }
-        },
-
-        // put underscores for letters in word
-
-        underscoreForCorrectWord: function (word) {
-
-            if (word === "") {
-                let letters = $('.wordLetters')
-                letters.html = ('')
-                for (i = 0; i < word.length; i++) {
-                    if (letterChosen === word[i]) {
-                        letters.append(`
-                    <p>${word[i]}</p>`)
-                    }
-                }
-            }
-        },
-        // put selectable letters/alphabet on screen
-
-        alphabet: function () {
-            const allLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-            let alphabetLetters = $('.alphabet')
-            alphabetLetters.html = ('')
-            for (i = 0; i < 26; i++) {
-                alphabetLetters.append(`
+    alphabet: function () {
+        const allLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+        let alphabetLetters = $('.alphabet')
+        alphabetLetters.html = ('')
+        for (i = 0; i < 26; i++) {
+            alphabetLetters.append(`
                 <p>${allLetters[i]}</p>`)
-            }
-            $('.alphabet').click(function (event) {
-                var letterClickedOn = $(event.target).text();
-                console.log("letter clicked " + letterClickedOn)
-                Hangman.correctLetters("MURRAY", letterClickedOn)
-        
-            })
-        },
-
-    }
+        }
+        $('.alphabet').click(function (event) {
+            var letterClickedOn = $(event.target).text();
+            // console.log(" line 73 letter clicked " + this.WordInPlay + letterClickedOn)
+            // Hangman.correctLetters(this.WordInPlay, letterClickedOn)
+            return
+        })
+    },  // end of alphabet
 
 
 
+} // end of Hangman
 
-window.onload = function() {
-// // Array function to hold the correct word
-console.log('WE ARE BORG!')
-$('#start').click(Hangman.correctLetters("MURRAY",''))
+window.onload = function () {
+    // // Array function to hold the correct word
+    console.log('WE ARE BORG!')
+    $('#start').click(Hangman.getWordInPlay())
 
 }

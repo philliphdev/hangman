@@ -1,14 +1,18 @@
 .container {
     display: flex;
-    /* margin: 0 auto; */
-    border: 10px solid gray;
+    justify-content: space-around;
+    flex-direction: column;
+    margin: 0 auto;
+    /* border: 10px solid gray; */
     padding: 10px;
+    
     
 }
 
 .wordLetters {
     font-size: 32px;
     display: flex;
+    justify-content: space-around;
     /* padding: 5em; */
     letter-spacing: 10px;
     color: red;
@@ -24,49 +28,43 @@
     color: red;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
+
+}
+
+
+
+
 .hangman {
-    border: 10px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* border: 10px solid red; */
     padding: 2em;
     margin: 0 auto;
+    max-width: 350px;
+    max-height: 600px;
+
+
+    
 }
 .instructions {
-    border: 10px solid red;
+    /* border: 10px solid red; */
     padding: 2em;
     margin: 0 auto;
 }
 .clues {
     font-size: 1em;
-    border: 10px solid red;
+    /* border: 10px solid red; */
     padding: 2em;
     margin: 0 auto;
 }
 
-/* h2{
+h2{
     margin: 0 auto;
-    font-size: 2em;
-} */
+    font-size: 1em;
+}
 
-#hangmanHead {
-    border: 10px solid blue;
-}
-#hangmanBody {
-    border: 10px solid rgb(0, 255, 94);
-}
-#leftArm {
-    border: 10px solid rgb(191, 0, 255);
-}
-#rightArm {
-    border: 10px solid orange;
-}
-#leftLeg {
-    border: 10px solid blueviolet;
-}
-#rightLeg {
-    border: 10px solid rgb(255, 234, 0);
-}
-#rope {
-    border: 10px solid red;
-}
-#hanger {
-    border: 10px solid orangered;
-}
