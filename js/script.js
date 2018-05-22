@@ -17,10 +17,29 @@ const Hangman = {
                 <p ${letterClass}>_</p>
                 `)
         }
+        this.lettersRemaining(wordInPlay)
 
-        
+
         return wordInPlay
     }, // end of GetWordInPlay
+
+    lettersRemaining: function (word) {
+        $('.alphabet').click(function (event) {
+            var letterClickedOn = $(event.target).text()
+            console.log("Line 35 you clicked on " + letterClickedOn)
+            let letters = $('.wordLetters')
+            letters.html = ('')
+
+            for (i = 0; i < word.length; i++) {
+                if (letterClickedOn === word[i]) {
+                    let letter = "#letter" + i
+                    $(letter).html(`
+                        ${word[i]}`)
+                    console.log("hmmm line 38  " + letter)
+                }
+            }
+        })
+      },  // End of lettersRemaining
 
     // put selectable letters/alphabet on screen
 
@@ -32,12 +51,13 @@ const Hangman = {
             alphabetLetters.append(`
                 <p>${allLetters[i]}</p>`)
         }
-        $('.alphabet').click(function (event) {
-            var letterClickedOn = $(event.target).text();
+        // $('.alphabet').click(function (event) {
+        //     var letterClickedOn = $(event.target).text()
+        //     console.log("Line 35 you clicked on " + letterClickedOn)
             // console.log(" line 73 letter clicked " + this.WordInPlay + letterClickedOn)
             // Hangman.correctLetters(this.WordInPlay, letterClickedOn)
-            return
-        })
+        //     return
+        // })
     },  // end of alphabet
 
 
