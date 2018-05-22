@@ -24,9 +24,10 @@ const Hangman = {
     }, // end of GetWordInPlay
 
     lettersRemaining: function (word) {
-        $('.alphabet').click(function (event) {
+        $('.letters').click(function (event) {
             var letterClickedOn = $(event.target).text()
-            console.log("Line 35 you clicked on " + letterClickedOn)
+            console.log("Line 29 you clicked on " + letterClickedOn)
+
             let letters = $('.wordLetters')
             letters.html = ('')
 
@@ -38,6 +39,9 @@ const Hangman = {
                     console.log("hmmm line 38  " + letter)
                 }
             }
+            
+            $('#' + letterClickedOn).addClass("fade")
+            console.log("Line 43" + letterClickedOn + i)
         })
       },  // End of lettersRemaining
 
@@ -49,7 +53,7 @@ const Hangman = {
         alphabetLetters.html = ('')
         for (i = 0; i < 26; i++) {
             alphabetLetters.append(`
-                <p>${allLetters[i]}</p>`)
+                <p class="letters" id=${allLetters[i]}>${allLetters[i]}</p>`)
         }
         // $('.alphabet').click(function (event) {
         //     var letterClickedOn = $(event.target).text()
@@ -68,5 +72,6 @@ window.onload = function () {
     // // Array function to hold the correct word
     console.log('WE ARE BORG!')
     $('#start').click(Hangman.getWordInPlay())
+    
 
 }
