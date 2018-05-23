@@ -1,4 +1,5 @@
-
+var incorrectChoiceCounter = 6
+var letterMatch = 'no'
 const Hangman = {
     getWordInPlay: function () {
         const randomWord = ['PICKARD', 'KIRK', 'CRUNCH', 'MORGAN', 'SPARROW']
@@ -8,9 +9,9 @@ const Hangman = {
         const wordInPlay = randomWord[randomNumber]
         console.log(wordInPlay)
         this.alphabet()
-            // put underscores for letters in wordInPlay
+        // put underscores for letters in wordInPlay
         let letters = $('.wordLetters')
-        letters.html = ('')        
+        letters.html = ('')
         for (i = 0; i < wordInPlay.length; i++) {
             let letterClass = "id = letter" + i
             letters.append(`
@@ -23,6 +24,11 @@ const Hangman = {
         return wordInPlay
     }, // end of GetWordInPlay
 
+    updateChoicesLeft: function(num) {
+        console.log("line 28 " + num)
+        $("#choicesLeftCounter").html(num)
+    },
+
     lettersRemaining: function (word) {
         $('.letters').click(function (event) {
             var letterClickedOn = $(event.target).text()
@@ -33,18 +39,28 @@ const Hangman = {
 
             for (i = 0; i < word.length; i++) {
                 if (letterClickedOn === word[i]) {
+                    letterMatch = "YES"
                     let letter = "#letter" + i
                     $(letter).html(`
                         ${word[i]}`)
                     console.log("hmmm line 38  " + letter)
-                }
+                } 
+
+                $('#' + letterClickedOn).addClass("fade")
+                $('#' + letterClickedOn).css('pointer-events', 'none')
+                console.log("Line 54" + letterClickedOn + i)
             }
-            
-            $('#' + letterClickedOn).addClass("fade")
-            $('#' + letterClickedOn).css('pointer-events', 'none')
-            console.log("Line 43" + letterClickedOn + i)
+            console.log("line 48 drop out of for loop " + letterMatch)
+            if (letterMatch === "YES"){
+                letterMatch = "NO"
+            } else {
+                incorrectChoiceCounter--
+                letterMatch = "NO"
+                Hangman.updateChoicesLeft(incorrectChoiceCounter)
+            }
+
         })
-      },  // End of lettersRemaining
+    },  // End of lettersRemaining
 
     // put selectable letters/alphabet on screen
 
@@ -59,8 +75,8 @@ const Hangman = {
         // $('.alphabet').click(function (event) {
         //     var letterClickedOn = $(event.target).text()
         //     console.log("Line 35 you clicked on " + letterClickedOn)
-            // console.log(" line 73 letter clicked " + this.WordInPlay + letterClickedOn)
-            // Hangman.correctLetters(this.WordInPlay, letterClickedOn)
+        // console.log(" line 73 letter clicked " + this.WordInPlay + letterClickedOn)
+        // Hangman.correctLetters(this.WordInPlay, letterClickedOn)
         //     return
         // })
     },  // end of alphabet
@@ -73,6 +89,6 @@ window.onload = function () {
     // // Array function to hold the correct word
     console.log('WE ARE BORG!')
     $('#start').click(Hangman.getWordInPlay())
-    
+
 
 }
