@@ -41,6 +41,7 @@ const Hangman = {
             }
             
             $('#' + letterClickedOn).addClass("fade")
+            $('#' + letterClickedOn).css('pointer-events', 'none')
             console.log("Line 43" + letterClickedOn + i)
         })
       },  // End of lettersRemaining
