@@ -26,7 +26,11 @@ const Hangman = {
 
     updateChoicesLeft: function(num) {
         console.log("line 28 " + num)
-        $("#choicesLeftCounter").html(num)
+        let counter = "#choicesLeftCounter"
+        $(counter).html(`
+        <h2>hello </h2>
+        ${num}
+    `)
     },
 
     lettersRemaining: function (word) {
