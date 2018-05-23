@@ -1,6 +1,8 @@
 $(document).ready(function () {
     console.log('WE ARE BORG!')
     var incorrectChoiceCounter = 6
+    var disableLetterClick = 0
+    var correctLetters = 0
     var letterMatch = 'no'
     const Hangman = {
         getWordInPlay: function () {
@@ -27,9 +29,10 @@ $(document).ready(function () {
         updateChoicesLeft: function (num) {
             console.log("line 28 " + num)
             let counter = "#choicesLeftCounter"
-            $(counter).html(`${num}`)
-
-            if (num === 0) {
+            if (num != 99) { 
+                $(counter).html(`${num}`)
+            }
+            if (num === 0 | num === 99) {
                 console.log("line 35 " + num)
                 $('.alphabet').css('pointer-events', 'none')
             }
@@ -47,6 +50,7 @@ $(document).ready(function () {
                 for (i = 0; i < word.length; i++) {
                     if (letterClickedOn === word[i]) {
                         letterMatch = "YES"
+                        correctLetters++
                         let letter = "#letter" + i
                         $(letter).html(`${word[i]}`)
                         console.log("hmmm line 38  " + letter)
@@ -57,6 +61,12 @@ $(document).ready(function () {
                     console.log("Line 54" + letterClickedOn + i)
                 }
                 console.log("line 48 drop out of for loop " + letterMatch)
+                if (word.length === correctLetters) {
+                    console.log("You win!")
+                    var disableLetterClick = 99
+                    Hangman.updateChoicesLeft(disableLetterClick)
+                }
+
                 if (letterMatch === "YES") {
                     letterMatch = "NO"
                 } else {
@@ -82,9 +92,12 @@ $(document).ready(function () {
 
         playGame: function () {
             incorrectChoiceCounter = 6
+            disableLetterClick = 0
+            correctLetters = 0
             Hangman.updateChoicesLeft(incorrectChoiceCounter)
             $(".letters").remove()
             $(".wordLetters").children().remove()
+            $('.alphabet').css('pointer-events', 'auto')
             Hangman.getWordInPlay()
             alert('button clicked')
 
