@@ -19,11 +19,11 @@
 }
 
 .alphabet {
-    font-size: 28px;
+    font-size: 2em;
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    /* padding: 2em; */
+    padding: 1em;
     letter-spacing: 10px;
     color: red;
 }

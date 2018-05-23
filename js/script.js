@@ -101,6 +101,7 @@ $(document).ready(function () {
             $('.alphabet').css('pointer-events', 'auto')
             Hangman.getWordInPlay()
             $('.incorrectChoices').toggleClass('d-none', false)
+            $('#wordSubject').toggleClass('d-none', false)
             $('.winner').toggleClass('d-none', true)
 
         }  // end playGame
