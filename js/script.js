@@ -65,6 +65,7 @@ $(document).ready(function () {
                     console.log("You win!")
                     var disableLetterClick = 99
                     Hangman.updateChoicesLeft(disableLetterClick)
+                    $('.winner').toggleClass('d-none', false)
                 }
 
                 if (letterMatch === "YES") {
@@ -99,7 +100,8 @@ $(document).ready(function () {
             $(".wordLetters").children().remove()
             $('.alphabet').css('pointer-events', 'auto')
             Hangman.getWordInPlay()
-            alert('button clicked')
+            $('.incorrectChoices').toggleClass('d-none', false)
+            $('.winner').toggleClass('d-none', true)
 
         }  // end playGame
 

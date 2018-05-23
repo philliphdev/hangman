@@ -18,7 +18,7 @@
             <ul>
                 <li>Guess the letters in the word by selecting a letter from the alphabet</li>
                 <li>For every incorrect letter chosen a body part is added to the gallow</li>
-                <li>8 incorrect choices hangs the man and you lose</li>
+                <li>6 incorrect choices displays a compete picture and you lose</li>
                 <li>Choose wisely</li>
                 <li>Click Play to begin</li>
             </ul>
@@ -27,29 +27,31 @@
         <div class="hangman">
             <!-- This is where to build the hangman and gallow -->
             <div class="grid-container">
-                <div id="hanger" class="grid-item">L</div>
-                <div id="rope" class="grid-item">P</div>
-                <div id="hangmanHead" class="grid-item">O</div>
-                <div id="hangmanBody" class="grid-item">|</div>
-                <div id="leftArm" class="grid-item">i</div>
-                <div id="rightArm" class="grid-item">i</div>
-                <div id="leftLeg" class="grid-item">L</div>
-                <div id="rightLeg" class="grid-item">L</div>
+                <img src="img/blank.png" id="part1" class="grid-item">
+                <img src="img/imagepart2.png" id="part2" class="grid-item d-none">
+                <img src="img/imagepart3.png" id="part3" class="grid-item d-none">
+                <img src="img/imagepart4.png" id="part4" class="grid-item d-none">
+                <img src="img/imagepart5.png" id="part5" class="grid-item d-none">
+                <img src="img/imagepart6.png" id="part6" class="grid-item d-none">
             </div>
             <div class="wordLetters">
 
             </div>
         </div>
+        <div class="winner d-none">
+            <h1>WINNER!</h1>
+        </div>
         <div class="clues">
             <h2>Guess the word!</h2>
-            <p id="wordSubject">HINT: Captain .....</p>
+            <p id="wordSubject" class="d-none">HINT: Captain .....</p>
         </div>
 
     </div>
-    <div class="incorrectChoices">
+    <div class="incorrectChoices d-none">
         <h2>INCORRECT CHOICES LEFT: </h2>
         <p id="choicesLeftCounter">6</p>
     </div>
+
     <div class="alphabet">
     </div>
 
