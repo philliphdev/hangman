@@ -29,8 +29,14 @@ $(document).ready(function () {
         updateChoicesLeft: function (num) {
             console.log("line 28 " + num)
             let counter = "#choicesLeftCounter"
-            if (num != 99) { 
+            if (num != 99) {
                 $(counter).html(`${num}`)
+                let imageId = "#part" + (num + 1)
+                // $(imageId).toggleClass('d-none', false)
+                console.log("false " + imageId + ' ' + num)
+                Hangman.displayStatusOfImages(num + 1)
+
+
             }
             if (num === 0 | num === 99) {
                 console.log("line 35 " + num)
@@ -103,9 +109,64 @@ $(document).ready(function () {
             $('.incorrectChoices').toggleClass('d-none', false)
             $('#wordSubject').toggleClass('d-none', false)
             $('.winner').toggleClass('d-none', true)
+            // $("#part6").toggleClass('d-none', true)
+            Hangman.displayStatusOfImages("blank")
 
-        }  // end playGame
 
+        },  // end playGame
+
+        displayStatusOfImages: function (status) {
+            switch (status) {
+                case "blank":
+                    let imageSrc = $('.grid-container');
+                    imageSrc.html = '';
+                    for (var i = 1; i < 7; i++) {
+                        imageSrc.append(`
+                    <img src="img/blank.png" id="part${i}" class="grid-item">
+                    `)
+                    }
+                    break
+                case 6:
+                    console.log("line 127 replace")
+                    $("#part6").replaceWith(`
+                    <img src="img/imagepart6.png" id="part6" class="grid-item">
+                    `)
+                    break
+                case 5:
+                    console.log("line 127 replace")
+                    $("#part2").replaceWith(`
+                    <img src="img/imagepart2.png" id="part2" class="grid-item">
+                    `)
+                    break
+                case 4:
+                    console.log("line 127 replace")
+                    $("#part5").replaceWith(`
+                    <img src="img/imagepart5.png" id="part5" class="grid-item">
+                    `)
+                    break
+                case 3:
+                    console.log("line 127 replace")
+                    $("#part1").replaceWith(`
+                    <img src="img/imagepart1.png" id="part1" class="grid-item">
+                    `)
+                    break
+                case 2:
+                    console.log("line 127 replace")
+                    $("#part4").replaceWith(`
+                    <img src="img/imagepart4.png" id="part4" class="grid-item">
+                    `)
+                    break
+                case 1:
+                    console.log("line 127 replace")
+                    $("#part3").replaceWith(`
+                    <img src="img/imagepart3.png" id="part3" class="grid-item">
+                    `)
+                    break
+
+            }
+
+
+        } // end of display status of images
 
 
     } // end of Hangman
