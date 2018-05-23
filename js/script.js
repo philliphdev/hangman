@@ -24,13 +24,18 @@ const Hangman = {
         return wordInPlay
     }, // end of GetWordInPlay
 
-    updateChoicesLeft: function(num) {
+    updateChoicesLeft: function (num) {
         console.log("line 28 " + num)
         let counter = "#choicesLeftCounter"
         $(counter).html(`
-        <h2>hello </h2>
         ${num}
     `)
+
+        if (num === 0) {
+            console.log("line 35 " + num)
+            $('.alphabet').css('pointer-events', 'none')
+        }
+
     },
 
     lettersRemaining: function (word) {
@@ -48,14 +53,14 @@ const Hangman = {
                     $(letter).html(`
                         ${word[i]}`)
                     console.log("hmmm line 38  " + letter)
-                } 
+                }
 
                 $('#' + letterClickedOn).addClass("fade")
                 $('#' + letterClickedOn).css('pointer-events', 'none')
                 console.log("Line 54" + letterClickedOn + i)
             }
             console.log("line 48 drop out of for loop " + letterMatch)
-            if (letterMatch === "YES"){
+            if (letterMatch === "YES") {
                 letterMatch = "NO"
             } else {
                 incorrectChoiceCounter--
@@ -76,13 +81,6 @@ const Hangman = {
             alphabetLetters.append(`
                 <p class="letters" id=${allLetters[i]}>${allLetters[i]}</p>`)
         }
-        // $('.alphabet').click(function (event) {
-        //     var letterClickedOn = $(event.target).text()
-        //     console.log("Line 35 you clicked on " + letterClickedOn)
-        // console.log(" line 73 letter clicked " + this.WordInPlay + letterClickedOn)
-        // Hangman.correctLetters(this.WordInPlay, letterClickedOn)
-        //     return
-        // })
     },  // end of alphabet
 
 
