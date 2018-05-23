@@ -109,7 +109,7 @@ $(document).ready(function () {
             $('.incorrectChoices').toggleClass('d-none', false)
             $('#wordSubject').toggleClass('d-none', false)
             $('.winner').toggleClass('d-none', true)
-            // $("#part6").toggleClass('d-none', true)
+            $('.grid-container').children().remove()
             Hangman.displayStatusOfImages("blank")
 
 
