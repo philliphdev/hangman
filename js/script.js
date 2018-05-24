@@ -6,7 +6,7 @@ $(document).ready(function () {
     var letterMatch = 'no'
     const Hangman = {
         getWordInPlay: function () {
-            const randomWord = ['PICKARD', 'KIRK', 'CRUNCH', 'MORGAN', 'SPARROW']
+            const randomWord = ['PICARD', 'KIRK', 'CRUNCH', 'MORGAN', 'SPARROW']
             let largeNumber = Math.random()
             let randomNumber = Math.floor(largeNumber * randomWord.length)
             const wordInPlay = randomWord[randomNumber]

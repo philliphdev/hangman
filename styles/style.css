@@ -1,3 +1,8 @@
+body {
+    background-image: url("../img/bgcaptainimage.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
 .container {
     display: flex;
     justify-content: space-around;
