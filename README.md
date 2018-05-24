@@ -1,4 +1,4 @@
-# hangman
+# Hangman
 # Project 1 description
 For this project I selected to write a Hangman game where the user can click play to load a random word to guess.  It has a theme for guessing famous captain names which is displayed as a hint. When the user clicks play the game is loaded with the alphabet of letters to choose from while guessing what the captains name is.  If the letter clicked matches any of the letters in the hidden word those letters are filled in. If the letter clicked doesn't match any letters in the hidden word 1 of the 6 pieces of the picture is filled in each time with the incorrect choices number updated to display how many incorrect choices they have left.  Once a letter in the alphabet is clicked it is no longer available for selecting. If the word is guessed before using all 6 incorrect choices the game is won, however if the incorrect choices reaches 0 of 6 the hangman picture is displayed and game over.  The user can click the play button to play again or refresh the page. I chose to keep it clean and simple with minimal dressings.
  
