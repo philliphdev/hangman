@@ -13,6 +13,7 @@ Technologies used in creating this project:
    - JQuery
    - Bootstrap
    - Animate.css
+   - MS PowerPoint for wireframe
 
 
 gameboard:
