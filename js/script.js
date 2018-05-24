@@ -49,7 +49,8 @@ $(document).ready(function () {
                         let letter = "#letter" + i
                         $(letter).html(`${word[i]}`)
                     }
-                    $('#' + letterClickedOn).addClass("fade")
+                    // $('#' + letterClickedOn).addClass("fade")
+                    $('#' + letterClickedOn).addClass("greyOut")
                     $('#' + letterClickedOn).css('pointer-events', 'none')
                 }
                 if (word.length === correctLetters) {
@@ -106,7 +107,7 @@ $(document).ready(function () {
                     imageSrc.html = '';
                     for (var i = 1; i < 7; i++) {
                         imageSrc.append(`
-                    <img src="img/blank.png" id="part${i}" class="grid-item">
+                    <img src="img/blank.png" id="part${i}" class="transparent grid-item">
                     `)
                     }
                     break

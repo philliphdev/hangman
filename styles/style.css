@@ -77,3 +77,10 @@ img {
     text-align: center;
 }
 
+.greyOut {
+    color: rgb(193, 193, 193);
+}
+
+.transparent {
+    opacity: .3;
+}
