@@ -1,26 +1,33 @@
 # hangman
-# MVP
- - Write a Hangman game that displays a secret word as a list of hidden letters. Also display an alphabet of letters that the user can guess while trying to guess the word. After a letter is used, disable that letter from the alphabet so the user will not try to guess the same letter twice. When a guess matches one or more letters in the secret word, reveal those letters to the user. Keep track of the number of incorrect guesses and end the game if the number of incorrect guesses reaches 6. If the user reveals all of the hidden letters before reaching 6 incorrect guesses, then the user wins.
- ### Bonus Ideas:
+# Project 1 description
+For this project I selected to write a Hangman game where the user can click play to load a random word to guess.  It has a theme for guessing famous captain names which is displayed as a hint. When the user clicks play the game is loaded with the alphabet of letters to choose from while guessing what the captains name is.  If the letter clicked matches any of the letters in the hidden word those letters are filled in. If the letter clicked doesn't match any letters in the hidden word 1 of the 6 pieces of the picture is filled in each time with the incorrect choices number updated to display how many incorrect choices they have left.  Once a letter in the alphabet is clicked it is no longer available for selecting. If the word is guessed before using all 6 incorrect choices the game is won, however if the incorrect choices reaches 0 of 6 the hangman picture is displayed and game over.  The user can click the play button to play again or refresh the page. I chose to keep it clean and simple with minimal dressings.
+ 
+Hangman site: http://stupefied-spence-fd243a.bitballoon.com/
 
-    -  Display a hangman as either ASCII art or images that represent the various stages of the hangman.
-     - Display a scoreboard of how games won and lost.
-      -Choose a theme for the game, such as "Famous Movies" or "Web Development Terms"
+Link to project user stories and tracking on Trello: https://trello.com/b/N6GGSoBQ/project-1-hangman
+
+Link to wireframe: https://github.com/philliphdev/hangman/blob/master/WireframeUpdate.png
+
+Technologies used in creating this project:
+   - HTML, CSS and JavaScritp
+   - JQuery
+   - Bootstrap
+   - Animate.css
 
 
 gameboard:
-  - picture of the hangman and gallow
+  - hidden picture of the hangman
   - instructions on how to play
-  - place for word subject
+  - hint for word subject
   - blank area under hangman for each letter of current word
   - the alphabet for users to select letters from
-  - moves left
+  - incorrect choices left
   
   
 gameplay:
   - user clicks play
   - random word is selected
-  - word subject is displayed to the user
+  - word hint is displayed to the user
   - alphabet is loaded with letters available to select
   - user clicks a letter
   - game checks to see if the letter is in the word in any spot(s)
@@ -29,13 +36,15 @@ gameplay:
       - disables the letter from the alphabet so user cannot select it again 
     if letter is NOT in the word
       - 1 point against the user is counted
-      - add a body part to the hangman
-
-   - if the number of incorrect choices reaches 6
-      - add a body part to the hangman
-      - the users looses
+      - reveal a part of the 6 pieces of the game over hangman picture
    - if the word is complete before the user reaches 6 incorrect choices
-      - display winner
-      - display button - play again
-       - if user clicks play again
-       - reset board keep last score
+      - displays winner
+      - if user clicks play again
+      - reset board load new random word
+
+
+future enhancements:
+  - level selection
+  - category selection with matching design theme
+  - allow the user to click show answer
+  
